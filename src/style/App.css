@@ -1,0 +1,144 @@
+ :root{
+  margin: 0px;
+  padding: 0px;
+ }
+body{
+  margin: 0px;
+  padding: 0px;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 1rem;
+} 
+nav {
+  width: 70%;
+}
+ul{
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  list-style-type: none;
+
+}
+/**********navigate vertical****/
+.navigate-vertical{
+  width: 10%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+}
+.text-copityght{
+  width: 21vh;
+  color: white;
+  transform: rotate(270deg);
+}
+
+.navigateVertical-profil{
+display: flex;
+}
+.profil{
+  width: 1124px;
+  padding: 2rem;
+}
+.tous-icons{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40vh;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  padding: 1%;
+  flex: 1 0 50%;
+  height: 40vh;
+}
+.barchart{
+ 
+  height: 22rem;
+ background: #FBFBFB;
+  ;
+}
+.text{
+  position: absolute;
+  top: 1rem;
+}
+.title-barChart{
+ position: absolute;
+ right:60% ; 
+}
+ /****************/
+ .trois-graphiques{
+  display: flex;
+  justify-content: space-between;
+ 
+ 
+ }
+/***********Linechart*****/
+.contnair-line-chart{
+  width: 32%;
+  height: 16.25rem;
+  background-color: #FF0000;
+  border-radius: 5px;
+}
+.title-lineChart{
+  color: #FFFFFF;
+  width: 8.75rem;
+  position: absolute;
+  font-size: 20px;
+  opacity: 0.50;
+}
+/***********Radarchart*****/
+.contnair-radarChart{
+  width: 32%;
+  height: 16.25rem;
+  background-color: black;
+  border-radius: 5px;
+}
+.contnair-radialbarchart {
+  width: 32%;
+  height: 16.25rem;
+  background-color: #FBFBFB;
+}
+.tous-graphiques{
+  width: 82%;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+ 
+ 
+.graphiques-valeurs{
+  display: flex;
+  gap: 10px;
+}
+/**************composant valeur*/
+.composant-valeur{
+  display: flex;
+  justify-content: space-around;
+  background-color:  #FBFBFB;
+  padding: 1rem;
+}
+.composants-valeurs{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.icon-valeur{
+  width: 50px;
+}
+.titre-valeur{
+  margin: 0;
+}
+.valeur{
+  margin: 0;
+}
