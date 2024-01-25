@@ -38,7 +38,7 @@ export const GraLineChart = () => {
       <h2 className="title-lineChart">Durée moyenne des sessions</h2>
       <ResponsiveContainer>
         <LineChart
-          width={730}
+          width={100}
           height={250}
           data={dataSessions}
           margin={{ top: 5, right: 2, left: 4, bottom: 5 }}

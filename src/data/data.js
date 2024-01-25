@@ -1,9 +1,9 @@
 
-/* export async function get(){
+ /*  export async function get(){
    const response=await fetch("http://localhost:3000/user/12")
    const data=await response.json()
    console.log(data)
-} */
+}  */
 export const USER_MAIN_DATA = [
     {
         id: 12,

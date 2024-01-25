@@ -16,10 +16,10 @@ const Lipides=tabKeyData[3]
 console.log("glusides",Glucides)
   return (
     <div className='composants-valeurs'> 
-        <Itemvaleur valeur={calories} text="Calories" icon="../assets/calories-icon.svg" />
-        <Itemvaleur valeur={protein} text="Proteines" icon="../assets/protein-icon.svg" />
-        <Itemvaleur valeur={Glucides} text="Glucides" icon="../assets/carbs-icon.svg" />
-        <Itemvaleur valeur={Lipides} text="Lipides" icon="../assets/fat-icon.svg" />
+        <Itemvaleur valeur={`${calories} kCal`} text="Calories" icon="../assets/calories-icon.svg" />
+        <Itemvaleur valeur={`${protein} g`} text="Proteines" icon="../assets/protein-icon.svg" />
+        <Itemvaleur valeur={`${Glucides} g`} text="Glucides" icon="../assets/carbs-icon.svg" />
+        <Itemvaleur valeur={`${Lipides} g`} text="Lipides" icon="../assets/fat-icon.svg" />
             
       
     </div>

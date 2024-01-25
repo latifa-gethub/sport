@@ -30,7 +30,7 @@ export const GraRaderChart = () => {
     <div className="contnair-radarChart">
         radar
        <ResponsiveContainer>
-        <RadarChart outerRadius={90} width={730} height={250} data={dataPerformance}>
+        <RadarChart outerRadius={50} width={100} height={100} data={dataPerformance}>
           <PolarGrid />
            <PolarAngleAxis dataKey="kind" tickFormatter={valueXaxis}/> 
              

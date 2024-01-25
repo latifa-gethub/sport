@@ -1,19 +1,21 @@
- :root{
-  margin: 0px;
-  padding: 0px;
- }
-body{
+  
+:root{  max-width: 1440px;  
+   
   margin: 0px;
   padding: 0px;
 }
+body{
+  margin: 0px;
+}
 header{
   display: flex;
-  justify-content: space-between;
+/*   justify-content: space-around; */
+  align-items: center;
   background-color: black;
-  padding: 1rem;
+  
 } 
 nav {
-  width: 70%;
+  width: 50%;
 }
 ul{
   display: flex;
@@ -42,8 +44,11 @@ ul{
 display: flex;
 }
 .profil{
-  width: 1124px;
+   width: 85%;
   padding: 2rem;
+}
+.name-user{
+  color: red;
 }
 .tous-icons{
   display: flex;
@@ -84,7 +89,7 @@ display: flex;
 /***********Linechart*****/
 .contnair-line-chart{
   width: 32%;
-  height: 16.25rem;
+  height: 14.25rem;
   background-color: #FF0000;
   border-radius: 5px;
 }
@@ -92,23 +97,23 @@ display: flex;
   color: #FFFFFF;
   width: 8.75rem;
   position: absolute;
-  font-size: 20px;
+  font-size: 12px;
   opacity: 0.50;
 }
 /***********Radarchart*****/
 .contnair-radarChart{
   width: 32%;
-  height: 16.25rem;
+  height: 14.25rem;
   background-color: black;
   border-radius: 5px;
 }
 .contnair-radialbarchart {
   width: 32%;
-  height: 16.25rem;
+  height: 14.25rem;
   background-color: #FBFBFB;
 }
 .tous-graphiques{
-  width: 82%;
+  width: 75%;
   display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -118,17 +123,18 @@ display: flex;
  
 .graphiques-valeurs{
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 /**************composant valeur*/
 .composant-valeur{
   display: flex;
   justify-content: space-around;
   background-color:  #FBFBFB;
-  padding: 1rem;
+width: 11rem;
+height: 7rem;
 }
 .composants-valeurs{
-  width: 15%;
+/*   width: 15%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,4 +147,9 @@ display: flex;
 }
 .valeur{
   margin: 0;
+}
+.contnair-valeur{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

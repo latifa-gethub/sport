@@ -31,7 +31,7 @@ export const ActivityQuotidien = () => {
 
       <ResponsiveContainer>
       <h2 className="title-barChart">Activité quotidienne</h2>
-        <BarChart width={720} height={250} data={dataSessions} barGap={8} barSize={7} >
+        <BarChart width={50} height={250} data={dataSessions} barGap={8} barSize={7} >
          
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis

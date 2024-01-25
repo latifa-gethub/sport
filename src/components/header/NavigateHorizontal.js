@@ -2,7 +2,7 @@ import React from 'react'
 
 export const NavigateHorizontal = () => {
   return (
-    <div>
+    
       <header>
         <img src='../assets/logo.svg' className='logo' alt='logo sportsee'/>
      
@@ -15,6 +15,6 @@ export const NavigateHorizontal = () => {
     </ul>
       </nav>
       </header>
-    </div>
+    
   )
 }
