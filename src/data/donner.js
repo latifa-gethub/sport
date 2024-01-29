@@ -3,41 +3,68 @@ import { USER_ACTIVITY } from './data';
 import { USER_AVERAGE_SESSIONS } from './data';
 import { USER_PERFORMANCE } from './data';
 
-const choix = true;
+const choix = false;
 
-export function getUser(userId) {
-  let data ;
+export async function getUser(userId) {
+  let data;
   if (choix) {
     data = USER_MAIN_DATA.find(user => user.id === userId);
-    return data.userInfos.firstName;
-  }  /* else {
+
+    return data;
+  } else {
     const response = await fetch(`http://localhost:3000/user/${userId}`);
     data = await response.json();
-    console.log('mes data avec fetch', data);
-  }  */
-
-  /* return data.userInfos.firstName; */
+    console.log('avec fetch', data.data);
+    return data.data
+  }
+}
+/**getUser activity************ */
+export async function getUserActivity(userId) {
+  let data;
+  if (choix) {
+    const data = USER_ACTIVITY.find(userA => userA.userId === userId);
+    return data;
+  } else {
+    const response = await fetch(
+      `http://localhost:3000/user/${userId}/activity`
+    );
+    data = await response.json();
+    return data.data;
+  }
 }
 
-export function getUserActivity(userId) {
-  const dataUserActivity = USER_ACTIVITY.find(userA => userA.userId === userId);
+/**getUser avarage sessions************ */
+export async function getUSER_AVERAGE_SESSIONS(userId) {
+  let data;
+  if (choix) {
+    const data = USER_AVERAGE_SESSIONS.find(user => user.userId === userId);
 
-  return dataUserActivity;
+    return data.sessions;
+  } else {
+    const response = await fetch(
+      `http://localhost:3000/user/${userId}/average-sessions`
+    );
+    data = await response.json();
+
+    return data.data.sessions;
+  }
 }
+/**getUser performance************ */
+export async function getUSER_PERFORMANCE(userId) {
+  let data;
+  if (choix) {
+    const data = USER_PERFORMANCE.find(user => user.userId === userId);
 
-export function getUSER_AVERAGE_SESSIONS(userId) {
-  const dataUser = USER_AVERAGE_SESSIONS.find(user => user.userId === userId);
-
-  return dataUser.sessions;
+    return data;
+  } else {
+    const response = await fetch(
+      `http://localhost:3000/user/${userId}/performance`
+    );
+    data = await response.json();
+    return data.data;
+  }
 }
-
-export function getUSER_PERFORMANCE(userId) {
-  const userPerformance = USER_PERFORMANCE.find(user => user.userId === userId);
-  console.log('user-performance', userPerformance);
-  return userPerformance;
-}
-
-export function getScore(userId) {
+/* export function getScore(userId) {
   const infoUser = USER_MAIN_DATA.find(user => user.id === userId);
 
   return infoUser;
@@ -48,4 +75,4 @@ export function getKeyData(userId) {
   const keyData = infoUser.keyData;
 
   return keyData;
-}
+} */

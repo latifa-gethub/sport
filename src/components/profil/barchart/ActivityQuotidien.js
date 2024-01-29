@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { customTooltipRadar } from './customTooltipRadar';
 import {
   ResponsiveContainer,
   BarChart,
@@ -11,12 +11,14 @@ import {
   Bar,
   Label
 } from 'recharts';
-import { getUserActivity } from '../../../data/donner';
-
-export const ActivityQuotidien = () => {
-  const dataUserActivity = getUserActivity(12);
   
-  const dataSessions = dataUserActivity.sessions;
+
+export const ActivityQuotidien = (props) => {
+  const actiivityUser=props.activityUser
+
+    if(actiivityUser){    
+  
+  const dataSessions =actiivityUser.sessions;
   
   //la function pour recuperer juste le jour
 
@@ -25,24 +27,34 @@ export const ActivityQuotidien = () => {
 
     return date.getDate();
   }
-  console.log('le jour est', formatXAxis());
+  
   return (
     <div className="barchart">
-
       <ResponsiveContainer>
-      <h2 className="title-barChart">Activité quotidienne</h2>
-        <BarChart width={50} height={250} data={dataSessions} barGap={8} barSize={7} >
-         
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+        <h2 className="title-barChart">Activité quotidienne</h2>
+
+        <BarChart
+          width={50}
+          height={250}
+          data={dataSessions}
+          barGap={8}
+          barSize={7}
+        >
+          <CartesianGrid strokeDasharray="2 2" vertical={false} />
           <XAxis
             dataKey="day"
             tickFormatter={formatXAxis}
-           height={40}
-           allowDecimals={false}
-           tickMargin={20}
+            height={40}
+            allowDecimals={false}
+            tickMargin={20}
           />
-          <YAxis orientation="right"  tickCount={3} />
-          <Tooltip />
+          <YAxis orientation="right" tickCount={3} />
+          <Tooltip
+            payload={[{ dataSessions }]}
+            
+             
+            content={customTooltipRadar }
+          />
           <Legend
             width={360}
             align="right"
@@ -66,5 +78,5 @@ export const ActivityQuotidien = () => {
         </BarChart>
       </ResponsiveContainer>
     </div>
-  );
+  );}
 };

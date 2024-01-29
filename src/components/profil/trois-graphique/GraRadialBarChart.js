@@ -2,31 +2,58 @@ import React from 'react';
 import { getScore } from '../../../data/donner';
 import {
   ResponsiveContainer,
-  RadialBarChart,
+  PieChart,
+  Pie
+  /*  RadialBarChart,
   RadialBar,
   Legend,
   Tooltip,
-  PolarAngleAxis
+  PolarAngleAxis */
 } from 'recharts';
 
-export const GraRadialBarChart = () => {
-  const infoUser = getScore(12);
+export const GraRadialBarChart = (props) => {
+  const infoUser = props.infoUser
+  if(infoUser){
 
+ 
   const data = [
     {
       score: infoUser.todayScore * 100
     }
   ];
   const recupScore = Object.values(data[0])[0];
-  console.log('mes data', data[0]);
-  console.log('mes score', recupScore);
-  /* const score=data */
+
+ 
 
   return (
     <div className="contnair-radialbarchart">
       <h3 className="title-radialbarchart">Score</h3>
       <ResponsiveContainer>
-        <RadialBarChart
+        <PieChart width={730} height={250}>
+          <Pie
+            data={data}
+            dataKey="score"
+            nameKey="name"
+            cx="50%"
+            cy="30%"
+            outerRadius={50}
+            fill="#fff"
+          />
+          <Pie
+            data={data}
+            dataKey="score"
+            cx="50%"
+            cy="30%"
+            startAngle={210}
+            endAngle={210 - recupScore / 100 * 360}
+            innerRadius={50}
+            outerRadius={65}
+            fill="#E60000"
+            cornerRadius={10}
+            label
+          />
+        </PieChart>
+        {/*  <RadialBarChart
           width={100}
           height={250}
           innerRadius="50"
@@ -61,16 +88,16 @@ export const GraRadialBarChart = () => {
               textAnchor: 'middle'
             }}
           />
-          {/* <Legend
+           <Legend
             iconSize={10}
             width={120}
             height={140}
             layout="vertical"
             verticalAlign="middle"
             align="left"
-          />   */}
-        </RadialBarChart>
+          />    
+        </RadialBarChart> */}
       </ResponsiveContainer>
     </div>
-  );
+  );}
 };

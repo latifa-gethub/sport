@@ -3,10 +3,12 @@ import { ResponsiveContainer,RadarChart,PolarGrid,PolarAngleAxis,PolarRadiusAxis
           Radar,Tooltip} from 'recharts';
 import { getUSER_PERFORMANCE } from '../../../data/donner';
 
-export const GraRaderChart = () => {
-    const userPerformance=getUSER_PERFORMANCE(12)
-    const dataPerformance=userPerformance.data
-    console.log("data user performance reçu",dataPerformance)
+export const GraRaderChart = (props) => {
+
+    const userPerformance=props.performance
+    if(userPerformance){
+    
+    const dataPerformance=userPerformance.data  
 
     const objectKind=userPerformance.kind
       
@@ -15,7 +17,7 @@ export const GraRaderChart = () => {
       let keys=Object.keys(objectKind)
        
       let kindChercher=""
-    //function qui nous recupereles element de l axe x
+    //function qui nous recupere les element de l axe x
     function valueXaxis(tickItem){
       for(let i=0;i<kind.length;i++){
       
@@ -30,10 +32,9 @@ export const GraRaderChart = () => {
     <div className="contnair-radarChart">
         radar
        <ResponsiveContainer>
-        <RadarChart outerRadius={50} width={100} height={100} data={dataPerformance}>
+        <RadarChart outerRadius={45} width={100} height={100} data={dataPerformance}>
           <PolarGrid />
-           <PolarAngleAxis dataKey="kind" tickFormatter={valueXaxis}/> 
-             
+           <PolarAngleAxis dataKey="kind" tickFormatter={valueXaxis}/>          
          
           <Radar            
             dataKey="value"            
@@ -45,5 +46,5 @@ export const GraRaderChart = () => {
         </RadarChart>
       </ResponsiveContainer>  
     </div>
-  );
+  );}
 };

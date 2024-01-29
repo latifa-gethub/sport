@@ -35,7 +35,7 @@ ul{
     background-color: black;
 }
 .text-copityght{
-  width: 21vh;
+  width: 30vh;
   color: white;
   transform: rotate(270deg);
 }
@@ -48,13 +48,13 @@ display: flex;
   padding: 2rem;
 }
 .name-user{
-  color: red;
+  color:#E60000;
 }
 .tous-icons{
   display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 40vh;
+    height: 50vh;
 }
 .container{
   display: flex;
@@ -65,6 +65,7 @@ display: flex;
   flex: 1 0 50%;
   height: 40vh;
 }
+/*******barchart********/
 .barchart{
  
   height: 22rem;
@@ -78,6 +79,15 @@ display: flex;
 .title-barChart{
  position: absolute;
  right:60% ; 
+}
+.info-bulle-barchart{
+  height: 4rem;
+  width: 3rem;
+  color: white;
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: 10px;
+  background-color: #E60000;
 }
  /****************/
  .trois-graphiques{
@@ -96,9 +106,17 @@ display: flex;
 .title-lineChart{
   color: #FFFFFF;
   width: 8.75rem;
-  position: absolute;
+  margin-left: 11px;
   font-size: 12px;
   opacity: 0.50;
+}
+.info-bulle{
+  width: 30px;
+  height: 20px;
+  background-color: #FBFBFB;
+  font-size: 8px;
+ text-align: center;
+ line-height: 1.2rem;
 }
 /***********Radarchart*****/
 .contnair-radarChart{
@@ -111,6 +129,9 @@ display: flex;
   width: 32%;
   height: 14.25rem;
   background-color: #FBFBFB;
+}
+.title-radialbarchart{
+  margin-left: 16px;
 }
 .tous-graphiques{
   width: 75%;
@@ -153,3 +174,4 @@ height: 7rem;
     flex-direction: column;
     justify-content: center;
 }
+ 

@@ -3,17 +3,20 @@ import { Itemvaleur } from './Itemvaleur'
 import { getKeyData } from '../../../data/donner'
  
 
-export const Valeurs = () => {
-const keyData=getKeyData(12)
-console.log("key data",keyData)
-const tabKeyData=Object.values(keyData)
-console.log("tab key data",tabKeyData)
-const calories=tabKeyData[0].toLocaleString("en-IN")
+export const Valeurs = (props) => {
+  const infoUser=props.infoUser
+  if(infoUser){
+    
+    const keyData=infoUser.keyData;
  
-const protein=tabKeyData[1]
-const Glucides=tabKeyData[2] 
-const Lipides=tabKeyData[3]
-console.log("glusides",Glucides)
+/* const tabKeyData=Object.values(keyData)*/
+ 
+const calories=keyData.calorieCount.toLocaleString("en-IN") 
+ 
+const protein=keyData.proteinCount
+const Glucides=keyData.carbohydrateCount
+const Lipides=keyData.lipidCount
+ 
   return (
     <div className='composants-valeurs'> 
         <Itemvaleur valeur={`${calories} kCal`} text="Calories" icon="../assets/calories-icon.svg" />
@@ -23,5 +26,5 @@ console.log("glusides",Glucides)
             
       
     </div>
-  )
+  )}
 }
