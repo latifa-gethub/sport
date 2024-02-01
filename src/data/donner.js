@@ -6,17 +6,17 @@ import { USER_PERFORMANCE } from './data';
 /* const choix = false; */
 
 export async function getUser(userId,choix) {
-  console.log("id recu a get user",userId)
+  
   let data;
   if (choix) {
     data = USER_MAIN_DATA.find(user => user.id === userId);
-    console.log("data info user",data)
+   
     return data;
   } else {
     try {
        const response = await fetch(`http://localhost:3000/user/${userId}`);
     data = await response.json();
-    console.log('avec fetch', data.data);
+  
     return data.data
     } catch (error) {
       console.error("erreur",error)
@@ -41,11 +41,11 @@ export async function getUserActivity(userId,choix) {
 
 /**getUser avarage sessions************ */
 export async function getUSER_AVERAGE_SESSIONS(userId,choix) {
-  console.log("id user recu averege",userId)
+ 
   let data;
   if (choix) {
     const data = USER_AVERAGE_SESSIONS.find(user => user.userId === userId);
-console.log("est qu'on reçoi les data averege session",data)
+ 
     return data.sessions;
   } else {
     const response = await fetch(
@@ -71,15 +71,4 @@ export async function getUSER_PERFORMANCE(userId,choix) {
     return data.data;
   }
 }
-/* export function getScore(userId) {
-  const infoUser = USER_MAIN_DATA.find(user => user.id === userId);
-
-  return infoUser;
-}
-
-export function getKeyData(userId) {
-  const infoUser = USER_MAIN_DATA.find(user => user.id === userId);
-  const keyData = infoUser.keyData;
-
-  return keyData;
-} */
+ 

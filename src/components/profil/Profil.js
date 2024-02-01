@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom';
 
 export const Profil = () => {
   const objetParams = useParams();
-  const idUser = objetParams.id;
+  const idUser = parseInt(objetParams.id);
   /**appelle api pour recuperer les data */ 
   const [infoUser, setInfoUser] = useState(null);
   const [callApi, setCallApi] = useState(false);
@@ -24,14 +24,12 @@ export const Profil = () => {
   useEffect(
     () => {
       async function appelleApi() {
-        console.log('id User on appellant les fonction', idUser);
+       
         setInfoUser(await getUser(idUser, callApi));
         setActivityUser(await getUserActivity(idUser, callApi));
-        setSessionUser(await getUSER_AVERAGE_SESSIONS(12, callApi));
+        setSessionUser(await getUSER_AVERAGE_SESSIONS(idUser, callApi));
         setPerformance(await getUSER_PERFORMANCE(idUser, callApi));
-        console.log('performance user', performance);
-        console.log('activity user', activityUser);
-        console.log('info user', infoUser);
+        
         if (
           infoUser === null ||
           activityUser === null ||

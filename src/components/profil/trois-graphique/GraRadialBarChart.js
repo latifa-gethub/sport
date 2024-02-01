@@ -10,19 +10,22 @@ import { CustomizedLabel } from './CustomizedLabel';
 
 export const GraRadialBarChart = (props) => {
   const infoUser = props.infoUser
-  if(infoUser){
- 
+  if(infoUser){    
+   
+    let score
+    if(infoUser.todayScore===undefined){
+      score=infoUser.score
+    }else{
+      score=infoUser.todayScore
+    }
   const data = [
     {
-      score: infoUser.todayScore * 100
+      score: score * 100      
     }
   ];
   const recupScore = Object.values(data[0])[0];
   
- /*************************** */
- 
   
-
   return (
     <div className="contnair-radialbarchart">
       <h3 className="title-radialbarchart">Score</h3>
