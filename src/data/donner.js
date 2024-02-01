@@ -3,23 +3,29 @@ import { USER_ACTIVITY } from './data';
 import { USER_AVERAGE_SESSIONS } from './data';
 import { USER_PERFORMANCE } from './data';
 
-const choix = false;
+/* const choix = false; */
 
-export async function getUser(userId) {
+export async function getUser(userId,choix) {
+  console.log("id recu a get user",userId)
   let data;
   if (choix) {
     data = USER_MAIN_DATA.find(user => user.id === userId);
-
+    console.log("data info user",data)
     return data;
   } else {
-    const response = await fetch(`http://localhost:3000/user/${userId}`);
+    try {
+       const response = await fetch(`http://localhost:3000/user/${userId}`);
     data = await response.json();
     console.log('avec fetch', data.data);
     return data.data
+    } catch (error) {
+      console.error("erreur",error)
+    }
+   
   }
 }
 /**getUser activity************ */
-export async function getUserActivity(userId) {
+export async function getUserActivity(userId,choix) {
   let data;
   if (choix) {
     const data = USER_ACTIVITY.find(userA => userA.userId === userId);
@@ -34,11 +40,12 @@ export async function getUserActivity(userId) {
 }
 
 /**getUser avarage sessions************ */
-export async function getUSER_AVERAGE_SESSIONS(userId) {
+export async function getUSER_AVERAGE_SESSIONS(userId,choix) {
+  console.log("id user recu averege",userId)
   let data;
   if (choix) {
     const data = USER_AVERAGE_SESSIONS.find(user => user.userId === userId);
-
+console.log("est qu'on reçoi les data averege session",data)
     return data.sessions;
   } else {
     const response = await fetch(
@@ -50,7 +57,7 @@ export async function getUSER_AVERAGE_SESSIONS(userId) {
   }
 }
 /**getUser performance************ */
-export async function getUSER_PERFORMANCE(userId) {
+export async function getUSER_PERFORMANCE(userId,choix) {
   let data;
   if (choix) {
     const data = USER_PERFORMANCE.find(user => user.userId === userId);

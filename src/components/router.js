@@ -1,17 +1,21 @@
 import React from 'react';
-import {Route,Routes,BrowserRouter} from 'react-router-dom';
-import { Encour } from './Encour';
-import { Profil } from './profil/Profil';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import App from '../App';
+import Erreur from './Erreur';
+import { Accueil } from './Accueil';
+ 
+ 
 
-const router = () => {
-  return (  
-  <BrowserRouter>
-   <Routes>
-     <Route path='/*' element={Encour}/>
-     <Route path='/' element={Encour}/> 
-     <Route path='/profil' element={Profil}/> 
-   </Routes>
-  </BrowserRouter>)
+const Router = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Accueil/>} />
+        <Route path='/profil/:id' element={<App/>} />
+         <Route path='*' element={<Erreur/> } />  
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
-export default router;
+export default Router;

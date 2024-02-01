@@ -1,20 +1,16 @@
 import React from 'react';
-import { getScore } from '../../../data/donner';
+ 
 import {
   ResponsiveContainer,
   PieChart,
-  Pie
-  /*  RadialBarChart,
-  RadialBar,
-  Legend,
-  Tooltip,
-  PolarAngleAxis */
+  Pie,
+  LabelList   
 } from 'recharts';
+import { CustomizedLabel } from './CustomizedLabel';
 
 export const GraRadialBarChart = (props) => {
   const infoUser = props.infoUser
   if(infoUser){
-
  
   const data = [
     {
@@ -22,8 +18,10 @@ export const GraRadialBarChart = (props) => {
     }
   ];
   const recupScore = Object.values(data[0])[0];
-
+  
+ /*************************** */
  
+  
 
   return (
     <div className="contnair-radialbarchart">
@@ -32,13 +30,14 @@ export const GraRadialBarChart = (props) => {
         <PieChart width={730} height={250}>
           <Pie
             data={data}
-            dataKey="score"
-            nameKey="name"
+            dataKey="score"           
             cx="50%"
             cy="30%"
             outerRadius={50}
             fill="#fff"
-          />
+          >
+            <LabelList dataKey="score" position="center" fill='black'/>
+          </Pie>
           <Pie
             data={data}
             dataKey="score"
@@ -50,8 +49,12 @@ export const GraRadialBarChart = (props) => {
             outerRadius={65}
             fill="#E60000"
             cornerRadius={10}
-            label
-          />
+            
+         />
+          
+        
+            
+         
         </PieChart>
         {/*  <RadialBarChart
           width={100}

@@ -15,6 +15,7 @@ import {
 export const GraLineChart = (props) => {
 
   const dataSessions = props.sessions;
+  console.log("data sessions",dataSessions)
 if(dataSessions){
   //function pour recuperer les jour
   function formatXAxis(tickItem) {

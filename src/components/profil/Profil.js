@@ -5,68 +5,56 @@ import { GraLineChart } from './trois-graphique/GraLineChart';
 import { GraRaderChart } from './trois-graphique/GraRaderChart';
 import { GraRadialBarChart } from './trois-graphique/GraRadialBarChart';
 import { getUser } from '../../data/donner';
-import {getUserActivity} from '../../data/donner';
+import { getUserActivity } from '../../data/donner';
 import { getUSER_AVERAGE_SESSIONS } from '../../data/donner';
 import { getUSER_PERFORMANCE } from '../../data/donner';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Valeurs } from './valeurs/Valeurs';
-export const Profil = () => {  
- /**appelle api pour recuperer nameUser */ 
+import { useParams } from 'react-router-dom';
 
- const [infoUser,setInfoUser]=useState(null)
-  useEffect(()=>{      
-     async function appelleApi(){      
-      setInfoUser(await getUser(12))
-     }
-  appelleApi()
-  },
-  []
-  ) 
-  
- 
- 
-  /**appelle api pr recuperer activity */
-  const [activityUser,setActivityUser]=useState(null)
-  useEffect(()=>{      
-     async function appelleApi1(){  
-         
-      setActivityUser(await getUserActivity(12))
-     }
-  appelleApi1()
-  },
-  []
-  )  
-  /**appelle api pour recuperer sessions */ 
+export const Profil = () => {
+  const objetParams = useParams();
+  const idUser = objetParams.id;
+  /**appelle api pour recuperer les data */ 
+  const [infoUser, setInfoUser] = useState(null);
+  const [callApi, setCallApi] = useState(false);
+  const [activityUser, setActivityUser] = useState(null);
+  const [sessionUser, setSessionUser] = useState(null);
+  const [performance, setPerformance] = useState(null);
+  useEffect(
+    () => {
+      async function appelleApi() {
+        console.log('id User on appellant les fonction', idUser);
+        setInfoUser(await getUser(idUser, callApi));
+        setActivityUser(await getUserActivity(idUser, callApi));
+        setSessionUser(await getUSER_AVERAGE_SESSIONS(12, callApi));
+        setPerformance(await getUSER_PERFORMANCE(idUser, callApi));
+        console.log('performance user', performance);
+        console.log('activity user', activityUser);
+        console.log('info user', infoUser);
+        if (
+          infoUser === null ||
+          activityUser === null ||
+          sessionUser === null ||
+          performance === null
+        ) {
+          setCallApi(true);
+        }
+      }
+      appelleApi();
+    },
+    [callApi]
+  );
 
- const [sessionUser,setSessionUser]=useState(null)
- useEffect(()=>{      
-    async function appelleApi(){      
-     setSessionUser(await getUSER_AVERAGE_SESSIONS(12))
-    }
- appelleApi()
- },
- []
- )  
- /**appelle api pour recuperer performances */ 
-
- const [performance,setPerformance]=useState(null)
-  useEffect(()=>{      
-     async function appelleApi(){      
-      setPerformance(await getUSER_PERFORMANCE(12))
-     }
-  appelleApi()
-  },
-  []
-  )  
   return (
     <div className="profil">
       <Name infoUser={infoUser} />
       <div className="graphiques-valeurs">
         <div className="tous-graphiques">
-          <ActivityQuotidien activityUser={activityUser}/>
+          <ActivityQuotidien activityUser={activityUser} />
           <div className="trois-graphiques">
-            <GraLineChart sessions={sessionUser}/>
-            <GraRaderChart performance={performance}/>
+            <GraLineChart sessions={sessionUser} />
+            <GraRaderChart performance={performance} />
             <GraRadialBarChart infoUser={infoUser} />
           </div>
         </div>
