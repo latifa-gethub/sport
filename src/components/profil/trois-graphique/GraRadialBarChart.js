@@ -10,7 +10,7 @@ import { CustomizedLabel } from './CustomizedLabel';
 
 export const GraRadialBarChart = (props) => {
   const infoUser = props.infoUser
-  if(infoUser){    
+  if(infoUser){  
    
     let score
     if(infoUser.todayScore===undefined){
@@ -29,6 +29,7 @@ export const GraRadialBarChart = (props) => {
   return (
     <div className="contnair-radialbarchart">
       <h3 className="title-radialbarchart">Score</h3>
+      <div className='text-objectif'><span className='pourcentage'>12%</span><span className='objectif'>de votre objectif</span></div>
       <ResponsiveContainer>
         <PieChart width={730} height={250}>
           <Pie
@@ -39,7 +40,7 @@ export const GraRadialBarChart = (props) => {
             outerRadius={50}
             fill="#fff"
           >
-            <LabelList dataKey="score" position="center" fill='black'/>
+            <LabelList dataKey="score" position="center" fill='#fff'/>
           </Pie>
           <Pie
             data={data}
