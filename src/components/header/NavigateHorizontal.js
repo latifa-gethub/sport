@@ -4,7 +4,7 @@ export const NavigateHorizontal = () => {
   return (
     
       <header>
-        <img src='../assets/logo.svg' className='logo' alt='logo sportsee'/>
+        <img src='../../assets/logo.svg' className='logo' alt='logo sportsee'/>
      
       <nav> 
      <ul>

@@ -11,7 +11,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Accueil/>} />
-        <Route path='/profil/:id' element={<App/>} />
+        <Route path='/profil/:id/:api' element={<App/>} />
          <Route path='*' element={<Erreur/> } />  
       </Routes>
     </BrowserRouter>

@@ -52,7 +52,7 @@ ul{
   transform: rotate(270deg);
 }
 
-.navigateVertical-profil{
+.navigateVertical-profil,.navigateVertical-choixUser{
 display: flex;
 }
 .profil{
@@ -213,11 +213,17 @@ height: 7rem;
   text-align: center;
   font-size: 30px;
  }
- .accueil{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- }
+  .choix-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 84%;
+    height: 50vh;
+  }
+  .choix-donner{
+    display: flex;
+  }
 .users{
   display: flex;
   justify-content: space-between;

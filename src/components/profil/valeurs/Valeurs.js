@@ -19,10 +19,10 @@ const Lipides=keyData.lipidCount
  
   return (
     <div className='composants-valeurs'> 
-        <Itemvaleur valeur={`${calories} kCal`} text="Calories" icon="../assets/calories-icon.svg" />
-        <Itemvaleur valeur={`${protein} g`} text="Proteines" icon="../assets/protein-icon.svg" />
-        <Itemvaleur valeur={`${Glucides} g`} text="Glucides" icon="../assets/carbs-icon.svg" />
-        <Itemvaleur valeur={`${Lipides} g`} text="Lipides" icon="../assets/fat-icon.svg" />
+        <Itemvaleur valeur={`${calories} kCal`} text="Calories" icon="../../assets/calories-icon.svg" />
+        <Itemvaleur valeur={`${protein} g`} text="Proteines" icon="../../assets/protein-icon.svg" />
+        <Itemvaleur valeur={`${Glucides} g`} text="Glucides" icon="../../assets/carbs-icon.svg" />
+        <Itemvaleur valeur={`${Lipides} g`} text="Lipides" icon="../../assets/fat-icon.svg" />
             
       
     </div>

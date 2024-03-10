@@ -29,7 +29,7 @@ export const GraRadialBarChart = (props) => {
   return (
     <div className="contnair-radialbarchart">
       <h3 className="title-radialbarchart">Score</h3>
-      <div className='text-objectif'><span className='pourcentage'>12%</span><span className='objectif'>de votre objectif</span></div>
+      <div className='text-objectif'><span className='pourcentage'>{recupScore}% </span><span className='objectif'>de votre objectif</span></div>
       <ResponsiveContainer>
         <PieChart width={730} height={250}>
           <Pie
