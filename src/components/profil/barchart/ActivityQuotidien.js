@@ -8,21 +8,20 @@ import {
   YAxis,
   Tooltip,
   Legend,
-  Bar,
-  Label
+  Bar
 } from 'recharts';
 
 export const ActivityQuotidien = props => {
+  //recupérer les data activity user avec un props   
   const actiivityUser = props.activityUser;
 
   if (actiivityUser) {
     const dataSessions = actiivityUser.sessions;
 
-    //la function pour recuperer juste le jour
-
+    //la function pour récupérer les jours
     function formatXAxis(tickItem) {
       const date = new Date(tickItem);
-
+       
       return date.getDate();
     }
 

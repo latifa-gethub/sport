@@ -1,6 +1,5 @@
 import React from 'react';
-/* import { FaPersonBooth,FaCartShopping } from 'react-icons/fa'; */
-
+ 
 export const NavigateVertical = () => {
   return (
     <div className="navigate-vertical">

@@ -177,7 +177,7 @@ display: flex;
   display: flex;
   gap: 15px;
 }
-/**************composant valeur*/
+/**************composants des cards*/
 .composant-valeur{
   display: flex;
   justify-content: space-around;
@@ -208,11 +208,17 @@ height: 7rem;
  .score{
   color: black;
  }
+ /***page erreur*/
  .error{
-  color: red;
+  width: 90%;
+ color: #E60000;
   text-align: center;
   font-size: 30px;
  }
+ .link{
+  font-size: 21px;
+ }
+ /******page d'accueil***/
   .choix-user{
     display: flex;
     flex-direction: column;
@@ -222,10 +228,16 @@ height: 7rem;
     height: 50vh;
   }
   .choix-donner{
+    width: 48%;
     display: flex;
+    justify-content: space-around;
   }
 .users{
   display: flex;
   justify-content: space-between;
   width: 11%;
+  
+}
+.user1,.user2{
+  color: #E60000;
 }

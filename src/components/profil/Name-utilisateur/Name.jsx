@@ -1,8 +1,8 @@
 import React from 'react';
-import { getUser } from '../../../data/donner';
-import { useEffect,useState } from 'react';
+ 
   
- export const Name = (props) => { 
+ export const Name = (props) => {
+  //récupérer info User avec un props 
   const infoUser=props.infoUser
   if(infoUser){ 
       const name=infoUser.userInfos.firstName

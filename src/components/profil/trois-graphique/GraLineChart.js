@@ -16,7 +16,7 @@ export const GraLineChart = props => {
   const dataSessions = props.sessions;
 
   if (dataSessions) {
-    //function pour recuperer les jour
+    //function appellé par tickFormatter pour recuperer les jour de la semaine
     function formatXAxis(tickItem) {
       const nbSemaine = [1, 2, 3, 4, 5, 6, 7];
       const nameSemaine = ['  L', 'M', 'M', 'J', 'V', 'S', 'D'];

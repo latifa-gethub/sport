@@ -1,5 +1,5 @@
 import React from 'react';
-
+//composant pour les cards
 export const Itemvaleur = props => {
   return (
     <div className="composant-valeur">

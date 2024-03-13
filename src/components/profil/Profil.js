@@ -14,21 +14,21 @@ import { useParams } from 'react-router-dom';
 import Erreur from '../Erreur';
 
 export const Profil = () => {
-  const objetParams = useParams();
-  const idUser = parseInt(objetParams.id);
-
+  //récuperer les paramettre de Url Id utilisateur et choix de données
+  const objetParams = useParams(); 
+  const idUser = parseInt(objetParams.id);   
   const Api = objetParams.api;
-  console.log(Api);
-  /**appelle api pour recuperer les data */
 
   const [infoUser, setInfoUser] = useState(null);
   const [callMock, setCallMock] = useState(Api === 'api' ? false : true);
+   
   const [activityUser, setActivityUser] = useState(null);
   const [sessionUser, setSessionUser] = useState(null);
   const [performance, setPerformance] = useState(null);
-
-  useEffect(  
-    () => { 
+//utiliser useEffect()  pour effectuer un appel API afin de charger 
+//les données à afficher dans les composants.
+  useEffect(
+    () => {
       async function appelleApi() {
         setInfoUser(await getUser(idUser, callMock));
         setActivityUser(await getUserActivity(idUser, callMock));
@@ -39,7 +39,7 @@ export const Profil = () => {
     },
     [callMock]
   );
-  console.log(infoUser);
+ //Si on récupére pas les data on met une redirection vers page d'erreur
   if (
     infoUser === false ||
     infoUser === 'erreur serveur' ||
@@ -47,7 +47,6 @@ export const Profil = () => {
     sessionUser === false ||
     performance === false
   ) {
-    /* setCallMock(true);   */
     return <Erreur />;
   }
   return (
