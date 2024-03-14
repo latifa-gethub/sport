@@ -52,8 +52,9 @@ ul{
   transform: rotate(270deg);
 }
 
-.navigateVertical-profil,.navigateVertical-choixUser{
+.navigateVertical-profil{
 display: flex;
+ 
 }
 .profil{
    width: 85%;
@@ -211,6 +212,7 @@ height: 7rem;
  /***page erreur*/
  .error{
   width: 90%;
+  height: 85vh;
  color: #E60000;
   text-align: center;
   font-size: 30px;
@@ -219,6 +221,10 @@ height: 7rem;
   font-size: 21px;
  }
  /******page d'accueil***/
+ .navigateVertical-choixUser{
+  display: flex;
+  height: 85vh;
+ }
   .choix-user{
     display: flex;
     flex-direction: column;

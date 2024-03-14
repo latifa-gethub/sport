@@ -20,8 +20,8 @@ export const ActivityQuotidien = props => {
 
     //la function pour récupérer les jours
     function formatXAxis(tickItem) {
-      const date = new Date(tickItem);
-       
+      const date = new Date(tickItem); 
+      console.log( date.getDate())     
       return date.getDate();
     }
 
@@ -29,7 +29,6 @@ export const ActivityQuotidien = props => {
       <div className="barchart">
         <ResponsiveContainer>
           <h2 className="title-barChart">Activité quotidienne</h2>
-
           <BarChart
             width={50}
             height={250}

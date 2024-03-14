@@ -22,6 +22,7 @@ export const GraRaderChart = props => {
     function valueXaxis(tickItem) {
       for (let i = 0; i < kind.length; i++) {
         if (keys[i] == tickItem) {
+
           kindChercher = kind[i];
         }
       }
@@ -44,7 +45,6 @@ export const GraRaderChart = props => {
               tickFormatter={valueXaxis}
               tick={{ fill: 'white', fontSize: 11 }}
             />
-
             <Radar dataKey="value" fill="#FF0000" fillOpacity={0.6} />
           </RadarChart>
         </ResponsiveContainer>

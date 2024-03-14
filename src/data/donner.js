@@ -39,7 +39,6 @@ export async function getUser(userId, choix) {
   * @param {boolean} choix 
   * @returns USER_MAIN_DATA
   */
-
 export async function getUserActivity(userId, choix) {
   let data;
   if (choix) {
@@ -48,12 +47,14 @@ export async function getUserActivity(userId, choix) {
   } else {
     try {
       const response = await fetch(
+         
         `http://localhost:3000/user/${userId}/activity`
       );
       if (response.ok) {
+        console.log(response)
         data = await response.json();
         return data.data;
-      } else if (response.ok === 404) {
+      } else if (response.status === 404) {
         return false;
       }
     } catch (error) {
@@ -84,7 +85,7 @@ export async function getUSER_AVERAGE_SESSIONS(userId, choix) {
         data = await response.json();
 
         return data.data.sessions;
-      } else if (response.ok === 404) {
+      } else if (response.status === 404) {
         return false;
       }
     } catch (error) {
@@ -114,7 +115,7 @@ export async function getUSER_PERFORMANCE(userId, choix) {
       if (response.ok) {
         data = await response.json();
         return data.data;
-      } else if (response.ok === 404) {
+      } else if (response.status === 404) {
         return false;
       }
     } catch (error) {

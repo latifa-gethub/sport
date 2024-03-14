@@ -5,8 +5,7 @@ import {
   PieChart,
   Pie,
   LabelList   
-} from 'recharts';
- 
+} from 'recharts'; 
 
 export const GraRadialBarChart = (props) => {
   const infoUser = props.infoUser
