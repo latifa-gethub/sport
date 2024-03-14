@@ -15,18 +15,18 @@ import Erreur from '../Erreur';
 
 export const Profil = () => {
   //récuperer les paramettre de Url Id utilisateur et choix de données
-  const objetParams = useParams(); 
-  const idUser = parseInt(objetParams.id);   
+  const objetParams = useParams();
+  const idUser = parseInt(objetParams.id);
   const Api = objetParams.api;
 
-  const [infoUser, setInfoUser] = useState(null);
   const [callMock, setCallMock] = useState(Api === 'api' ? false : true);
-   
+  const [infoUser, setInfoUser] = useState(null);
   const [activityUser, setActivityUser] = useState(null);
   const [sessionUser, setSessionUser] = useState(null);
   const [performance, setPerformance] = useState(null);
-//utiliser useEffect()  pour effectuer un appel API afin de charger 
-//les données à afficher dans les composants.
+  
+  //utiliser useEffect()  pour effectuer un appel API afin de charger
+  //les données à afficher dans les composants.
   useEffect(
     () => {
       async function appelleApi() {
@@ -39,7 +39,7 @@ export const Profil = () => {
     },
     [callMock]
   );
- //Si on récupére pas les data on met une redirection vers page d'erreur
+  //Si on récupére pas les data on met une redirection vers page d'erreur
   if (
     infoUser === false ||
     infoUser === 'erreur serveur' ||

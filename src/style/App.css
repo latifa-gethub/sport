@@ -35,7 +35,7 @@ ul{
 /**********navigate vertical****/
 .navigate-vertical{
   width: 10%; 
-  height: 103vh;   
+     
     display: flex;
     flex-direction: column;
     justify-content: space-around;
